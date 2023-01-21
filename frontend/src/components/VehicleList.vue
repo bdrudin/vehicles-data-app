@@ -81,7 +81,7 @@ methods: {
   },
     async getData() {
       try {
-          const response = await axios.get('http://localhost:3333/vehicles').then(response => {
+          const response = await axios.get('/vehicles').then(response => {
             this.vehicles = response.data
           });
           this.data = response.data;
@@ -91,7 +91,7 @@ methods: {
   },
     async fetchVehicles() {
       try {
-        const response = await axios.get('http://localhost:3333/vehicles').then(response => {
+        const response = await axios.get('/vehicles').then(response => {
             this.allVehicles = response.data.vehicles;
             this.vehicles = response.data.vehicles;
           });
@@ -111,7 +111,7 @@ methods: {
   }).then(async (result) => {
     if (result.value) {
       try {
-        await axios.delete(`http://localhost:3333/vehicles/${id}`)
+        await axios.delete(`/vehicles/${id}`)
         Swal.fire(
           'Deleted!',
           'Your file has been deleted.',

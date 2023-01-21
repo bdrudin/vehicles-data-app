@@ -30,7 +30,7 @@
     methods: {
       async fetchVehicle() {
         try {
-          const response = await axios.get(`http://localhost:3333/vehicles/${this.$route.params.id}`)
+          const response = await axios.get(`/vehicles/${this.$route.params.id}`)
           this.vehicle = response.data
         } catch (err) {
           console.log(err)

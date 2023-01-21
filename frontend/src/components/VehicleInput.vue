@@ -112,7 +112,7 @@ export default {
   },
   methods: {
     async submitForm() {
-      axios.post('http://localhost:3333/vehicles', this.form)
+      axios.post('/vehicles', this.form)
         .then(response => {
           Swal.fire({
             title: 'Data berhasil disimpan!',
