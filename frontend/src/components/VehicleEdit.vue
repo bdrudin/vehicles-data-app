@@ -61,7 +61,7 @@ created() {
 methods: {
     async fetchVehicle() {
         try {
-            const response = await axios.get(`http://localhost:3333/vehicles/${this.$route.params.id}`)
+            const response = await axios.get(`/vehicles/${this.$route.params.id}`)
             this.vehicle = response.data
         } catch (err) {
             console.log(err)
@@ -69,7 +69,7 @@ methods: {
     },
     async updateVehicle() {
     try {
-        await axios.put(`http://localhost:3333/vehicles/${this.$route.params.id}`, this.vehicle)
+        await axios.put(`/vehicles/${this.$route.params.id}`, this.vehicle)
         this.$router.push("/")
     } catch (err) {
         console.log(err)
